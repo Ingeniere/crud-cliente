@@ -1,0 +1,10 @@
+package com.clientes.control.app.dao;
+
+import com.clientes.control.app.domain.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface UsuarioDao extends JpaRepository<Usuario, Long> {
+    //@Query("SELECT u FROM Usuario u WHERE u.username = :username")
+    Usuario findByUsername(String username);
+}
